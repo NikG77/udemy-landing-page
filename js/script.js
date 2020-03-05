@@ -1,39 +1,40 @@
-window.addEventListener('DOMContentLoaded', function () {
-    'use strict';
+'use strict';
 
-    let headerMain = document.querySelector('.info-header');
-    let headers = document.querySelectorAll('.info-header-tab');
-    let headersContent = document.querySelectorAll('.info-tabcontent');
+(function () {
+    let info = document.querySelector('.info-header');
+    let tab = document.querySelectorAll('.info-header-tab');
+    let tabContent = document.querySelectorAll('.info-tabcontent');
 
-    let hide = function (a) {
-        for (let i = a; i < headers.length; i++) {
-            headersContent[i].classList.add('hide');
-            headersContent[i].classList.remove('show');
+    let hideTabConten = function (a) {
+        for (let i = a; i < tab.length; i++) {
+            tabContent[i].classList.add('hide');
+            tabContent[i].classList.remove('show');
         }
     };
 
     let show = function (i) {
-        if (headersContent[i].classList.contains('hide')) {
-            headersContent[i].classList.add('show');
-            headersContent[i].classList.remove('hide');
+        if (tabContent[i].classList.contains('hide')) {
+            tabContent[i].classList.add('show');
+            tabContent[i].classList.remove('hide');
         }
     };
 
-    
     let onHeaderClick = function (evt) {
         let target = evt.target;
-        for (let i = 0; i < headers.length; i++) {
-            if (target && target == headers[i]) {
-                hide(0);
-                show(i);
-                break;
+        if (target && target.classList.contains('info-header-tab')) {
+            for (let i = 0; i < tab.length; i++) {
+                if (target == tab[i]) {
+                    hideTabConten(0);
+                    show(i);
+                    break;
+                }
             }
         }
+            
     };
 
-    hide(1);
+    hideTabConten(1);
 
-    headerMain.addEventListener('click', onHeaderClick);
+    info.addEventListener('click', onHeaderClick);
 
-
-});
+}) ();
