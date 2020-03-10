@@ -7,7 +7,7 @@
     let closePopup = document.querySelector('.popup-close');
 
 
-    let onBtnClick = function (evt) {
+    let onBtnClick = (evt) => {
         let onPopupCloseClick = function () {
             overlay.style.display = 'none';
             overlay.classList.remove('more-splash');
@@ -28,13 +28,45 @@
 
     };
     
-    // info.addEventListener('click', onBtnClick);
+    info.addEventListener('click', onBtnClick);
 
     // let age = document.getElementById('age');
     // function showUser(surname, name) {
     //     alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
     // }
     // showUser();
+
+    // Р’С‚РѕСЂРѕРµ Р·Р°РґР°РЅРёРµ
+
+    // let age = document.getElementById('age');
+    
+    // function showUser(surname, name) {
+    //          alert("РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ " + surname + " " + name + ", РµРіРѕ РІРѕР·СЂР°СЃС‚ " + this.value);
+    // }
+    
+    // showUser.apply(age, ["Р“РѕСЂСЊРєРёР№","РњР°РєСЃРёРј"]);
+
+
+    // class Options {
+    //     constructor(height, width, bg, fontSize, textAlign) {
+    //         this.height = height;
+    //         this.width = width;
+    //         this.bg = bg;
+    //         this.fontSize = fontSize;
+    //         this.textAlign = textAlign;
+    //     }
+    
+    //     createDiv() {
+    //         let elem = document.createElement('div');
+    //         document.body.appendChild(elem);
+    //         let param = `height:${this.height}px; width:${this.width}px; background-color:${this.bg}; font-size:${this.fontSize}px; text-align:${this.textAlign}`;
+    //         elem.style.cssText = param;
+    //     }
+    // }
+    
+    // const item = new Options(300, 350, "red", 14, "center");
+    
+    // item.createDiv();
 
 
 })();

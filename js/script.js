@@ -5,21 +5,21 @@
     let tab = document.querySelectorAll('.info-header-tab');
     let tabContent = document.querySelectorAll('.info-tabcontent');
 
-    let hideTabConten = function (a) {
+    let hideTabConten = (a) => {
         for (let i = a; i < tab.length; i++) {
             tabContent[i].classList.add('hide');
             tabContent[i].classList.remove('show');
         }
     };
 
-    let show = function (i) {
+    let show = (i) => {
         if (tabContent[i].classList.contains('hide')) {
             tabContent[i].classList.add('show');
             tabContent[i].classList.remove('hide');
         }
     };
 
-    let onHeaderClick = function (evt) {
+    let onHeaderClick = (evt) => {
         let target = evt.target;
         if (target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
