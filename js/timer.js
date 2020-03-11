@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-    let DEADLINE = '2020-03-08';
+    let DEADLINE = '2020-03-11';
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date());
