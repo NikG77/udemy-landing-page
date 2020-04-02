@@ -25,25 +25,25 @@
         dots[slideIndex - 1].classList.add('dot-active');
     }
 
-    function plusSlider(n) {
+    function plusSlides(n) {
         showSlides(slideIndex += n);
     }
-    function currentSlider(n) {
+    function currentSlide(n) {
         showSlides(slideIndex = n);
     }
 
     prev.addEventListener('click', function() {
-        plusSlider(-1);
+        plusSlides(-1);
     });
 
     next.addEventListener('click', function() {
-        plusSlider(1);
+        plusSlides(1);
     });
 
     dotsWrap.addEventListener('click', function(evt) {
         for (let i = 0; i < dots.length + 1; i++) {
-            if (evt.target.classList.content('dot') && evt.target == dots[i - 1]) {
-                currentSlider(i - 1);
+            if (evt.target.classList.contains('dot') && evt.target == dots[i - 1]) {
+                currentSlide(i);
             }
         }
 
